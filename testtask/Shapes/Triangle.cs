@@ -1,41 +1,35 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using testtask.interfaces;
+﻿using testtask.Interfaces;
 
-namespace testtask.classes
+namespace testtask.Shapes;
+
+public class Triangle : IShape
 {
-    public class Triangle : IShape
+    public Triangle(double sideA, double sideB, double sideC)
     {
-        public double SideA { get; set; }
-        public double SideB { get; set; }
-        public double SideC { get; set; }
+        SideA = sideA;
+        SideB = sideB;
+        SideC = sideC;
+    }
 
-        public Triangle(double sideA, double sideB, double sideC)
-        {
-            SideA = sideA;
-            SideB = sideB;
-            SideC = sideC;
-        }
+    public double SideA { get; set; }
+    public double SideB { get; set; }
+    public double SideC { get; set; }
 
-        public double CalculateArea()
-        {
-            // Using Heron's formula
-            var semiPerimeter = (SideA + SideB + SideC) / 2;
-            return Math.Sqrt(semiPerimeter *
-                             (semiPerimeter - SideA) *
-                             (semiPerimeter - SideB) *
-                             (semiPerimeter - SideC));
-        }
+    public double CalculateArea()
+    {
+        // Using Heron's formula
+        var semiPerimeter = (SideA + SideB + SideC) / 2;
+        return Math.Sqrt(semiPerimeter *
+                         (semiPerimeter - SideA) *
+                         (semiPerimeter - SideB) *
+                         (semiPerimeter - SideC));
+    }
 
-        public bool IsRightTriangle()
-        {
-            var sides = new double[] { SideA, SideB, SideC };
-            Array.Sort(sides);
+    public bool IsRightTriangle()
+    {
+        var sides = new[] { SideA, SideB, SideC };
+        Array.Sort(sides);
 
-            return Math.Abs(Math.Pow(sides[0], 2) + Math.Pow(sides[1], 2) - Math.Pow(sides[2], 2)) < 0.0001;
-        }
+        return Math.Abs(Math.Pow(sides[0], 2) + Math.Pow(sides[1], 2) - Math.Pow(sides[2], 2)) < 0.0001;
     }
 }

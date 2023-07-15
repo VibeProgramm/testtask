@@ -1,24 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using testtask.interfaces;
+﻿using testtask.Interfaces;
 
-namespace testtask.classes
+namespace testtask.Shapes;
+
+public class Circle : IShape
 {
-    public class Circle : IShape
+    public Circle(double radius)
     {
-        public double Radius { get; set; }
+        Radius = radius;
+    }
 
-        public Circle(double radius)
-        {
-            Radius = radius;
-        }
+    public double Radius { get; set; }
 
-        public double CalculateArea()
-        {
-            return Math.PI * Math.Pow(Radius, 2);
-        }
+    public double CalculateArea()
+    {
+        return Math.PI * Math.Pow(Radius, 2);
     }
 }
