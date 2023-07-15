@@ -1,5 +1,5 @@
-﻿using testtask.classes;
-using testtask.interfaces;
+﻿using testtask.interfaces;
+using testtask.Shapes;
 
 IShape circle = new Circle(5);
 Console.WriteLine($"Area of the circle: {circle.CalculateArea()}");
