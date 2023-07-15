@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace testtask.Interfaces;
 
-namespace testtask.Interfaces
+public interface IShape
 {
-    public interface IShape
-    {
-        double CalculateArea();
-    }
+    double CalculateArea();
 }
